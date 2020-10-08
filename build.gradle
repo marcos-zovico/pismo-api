@@ -4,6 +4,10 @@ plugins {
 	id 'java'
 }
 
+ext {
+	lombokVersion = '1.18.12'
+}
+
 group = 'io.pismo'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -13,6 +17,8 @@ repositories {
 }
 
 dependencies {
+	compileOnly "org.projectlombok:lombok:${lombokVersion}"
+	annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
