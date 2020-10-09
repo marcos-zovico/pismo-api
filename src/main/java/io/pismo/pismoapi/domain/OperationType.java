@@ -14,7 +14,7 @@ import lombok.Data;
 @Entity(name = "OperationsType")
 @Table(name = "OPERATIONS_TYPE")
 @SequenceGenerator(sequenceName = "SQ_OPERATIONS_TYPE_ID", name = "SQ_OPERATIONS_TYPE_ID")
-public class OperationsType {
+public class OperationType {
 
     @Id
     @Column(name = "OPERATIONS_TYPE_ID", nullable = false)

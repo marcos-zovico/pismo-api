@@ -1,19 +1,10 @@
 package io.pismo.pismoapi.domain;
 
+import lombok.Data;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.UUID;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
-import lombok.Data;
 
 @Data
 @Entity(name = "Transaction")
@@ -27,20 +18,20 @@ public class Transaction {
     private Long id;
 
     @Column(name = "TRANSACTION_CODE", nullable = false)
-    private UUID transactionCode;
+    private String transactionCode;
 
     @ManyToOne
-    @JoinColumn(name = "ACCOUNT_ID", nullable = false, insertable = false)
+    @JoinColumn(name = "ACCOUNT_ID")
     private Account account;
 
     @ManyToOne
-    @JoinColumn(name = "OPERATION_TYPE_ID", nullable = false, insertable = false)
-    private OperationsType operationsType;
+    @JoinColumn(name = "OPERATION_TYPE_ID")
+    private OperationType operationType;
 
     @Column(name = "AMOUNT", nullable = false)
     private BigDecimal amount;
 
-    @Column(name = "EVENT_DATE")
+    @Column(name = "EVENT_DATE", nullable = false)
     private LocalDateTime eventDate;
 
 }

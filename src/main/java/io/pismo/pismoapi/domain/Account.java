@@ -1,14 +1,8 @@
 package io.pismo.pismoapi.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
 import lombok.Data;
+
+import javax.persistence.*;
 
 @Data
 @Entity(name = "Account")
@@ -23,4 +17,5 @@ public class Account {
 
     @Column(name = "DOCUMENT_NUMBER")
     private String documentNumber;
+
 }

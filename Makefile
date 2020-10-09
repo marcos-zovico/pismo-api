@@ -1,6 +1,6 @@
 .PHONY: build
 
-GRADLE = ./gradlew --stacktrace --no-daemon --console=plain
+GRADLE = ./gradlew
 
 build:
 	echo " --- BUILDING API --- "
