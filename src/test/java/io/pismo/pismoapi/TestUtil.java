@@ -13,6 +13,10 @@ public class TestUtil {
     private TestUtil(){
     }
 
+    public static String newUuid(){
+        return UUID.randomUUID().toString();
+    }
+
     public static Account createAccount(String documentNumber) {
         Account account = new Account();
         account.setDocumentNumber(documentNumber);
