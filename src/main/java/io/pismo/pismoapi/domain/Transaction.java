@@ -17,7 +17,7 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "SQ_TRANSACTION_ID")
     private Long id;
 
-    @Column(name = "TRANSACTION_CODE", nullable = false)
+    @Column(name = "TRANSACTION_CODE", nullable = false, unique = true)
     private String transactionCode;
 
     @ManyToOne

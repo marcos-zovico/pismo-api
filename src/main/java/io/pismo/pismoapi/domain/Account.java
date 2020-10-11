@@ -17,5 +17,4 @@ public class Account {
 
     @Column(name = "DOCUMENT_NUMBER")
     private String documentNumber;
-
 }

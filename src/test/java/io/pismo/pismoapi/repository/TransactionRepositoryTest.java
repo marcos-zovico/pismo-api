@@ -29,7 +29,7 @@ public class TransactionRepositoryTest {
     private AccountRepository accountRepository;
 
     @Autowired
-    private OperationsTypeRepository operationsTypeRepository;
+    private OperationTypeRepository operationTypeRepository;
 
     @Autowired
     private TransactionRepository transactionRepository;
@@ -43,7 +43,7 @@ public class TransactionRepositoryTest {
         this.operationType = createOperationType("PAGAMENTO");
 
         account = accountRepository.save(account);
-        operationType = operationsTypeRepository.save(operationType);
+        operationType = operationTypeRepository.save(operationType);
     }
 
     @Test
@@ -77,7 +77,7 @@ public class TransactionRepositoryTest {
 
         Pageable sortedByEventDate = PageRequest.of(0, 5, Sort.by("eventDate").descending());
 
-        Page<Transaction> transactions = transactionRepository.findByAccount(account, sortedByEventDate);
+        Page<Transaction> transactions = transactionRepository.listByAccount(account, sortedByEventDate);
 
         assertEquals(2,transactions.getTotalElements());
         transactions.forEach(t -> {

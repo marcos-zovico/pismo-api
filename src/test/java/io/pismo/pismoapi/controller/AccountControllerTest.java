@@ -26,8 +26,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class AccountControllerTest {
 
-    private static final String CREATE_ACCOUNT = "/accounts";
-
     @Autowired
     private MockMvc mockMvc;
 

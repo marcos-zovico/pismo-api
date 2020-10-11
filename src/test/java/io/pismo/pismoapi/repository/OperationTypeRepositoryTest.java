@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class OperationTypeRepositoryTest {
 
     @Autowired
-    private OperationsTypeRepository repository;
+    private OperationTypeRepository repository;
 
     @Test
     @DisplayName("Save All Operation Type")
