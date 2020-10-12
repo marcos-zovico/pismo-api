@@ -43,3 +43,7 @@ test {
 		events "passed", "skipped", "failed"
 	}
 }
+
+bootBuildImage {
+	imageName = "pismo/pismo-api"
+}

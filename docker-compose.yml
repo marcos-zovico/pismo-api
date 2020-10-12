@@ -12,6 +12,7 @@ services:
       MYSQL_PASSWORD: pass
       MYSQL_ROOT_PASSWORD: pass
       MYSQL_DATABASE: pismo
+    network_mode: host
 
   app:
     depends_on:
@@ -23,3 +24,13 @@ services:
       - '8081:80'
     environment:
       PMA_HOST: db
+    network_mode: host
+
+  pismo-api:
+    depends_on:
+      - app
+    container_name: pismo-api
+    image: mzovico/pismo-api:latest
+    ports:
+      - '8080:8080'
+    network_mode: host
