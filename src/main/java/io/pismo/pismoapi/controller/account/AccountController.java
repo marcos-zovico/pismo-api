@@ -2,6 +2,7 @@ package io.pismo.pismoapi.controller.account;
 
 import io.pismo.pismoapi.domain.Account;
 import io.pismo.pismoapi.repository.AccountRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.ResponseEntity.notFound;
 import static org.springframework.http.ResponseEntity.ok;
 
+@Log4j2
 @RestController
 @RequestMapping(produces = APPLICATION_JSON_VALUE)
 public class AccountController {
@@ -30,7 +32,9 @@ public class AccountController {
 
     @PostMapping(value = ACCOUNT_PATH)
     public ResponseEntity<AccountResponse> createAccount(@Valid @RequestBody final AccountRequest request) {
+        log.info("creating account");
         final Account account = repository.save(toAccount(request));
+        log.info("Account successful created");
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(toResponse(account));
     }

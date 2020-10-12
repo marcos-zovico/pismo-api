@@ -1,19 +1,18 @@
 package io.pismo.pismoapi.repository;
 
-import io.pismo.pismoapi.PismoApiApplication;
+import io.pismo.pismoapi.PismoApplicationTest;
 import io.pismo.pismoapi.domain.OperationType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
 import static io.pismo.pismoapi.TestUtil.createOperationType;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@SpringBootTest(classes = PismoApiApplication.class)
+@PismoApplicationTest
 public class OperationTypeRepositoryTest {
 
     @Autowired

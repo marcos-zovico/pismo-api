@@ -9,12 +9,11 @@ import java.time.LocalDateTime;
 @Data
 @Entity(name = "Transaction")
 @Table(name = "TRANSACTION")
-@SequenceGenerator(sequenceName = "SQ_TRANSACTION_ID", name = "SQ_TRANSACTION_ID")
 public class Transaction {
 
     @Id
     @Column(name = "TRANSACTION_ID", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "SQ_TRANSACTION_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "TRANSACTION_CODE", nullable = false, unique = true)

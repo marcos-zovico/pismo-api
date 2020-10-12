@@ -1,1 +1,35 @@
+spring:
+  profiles: dev
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate.ddl-auto: update
+  flyway:
+    enabled: false
+
+
+---
+spring:
+  profiles:
+    active: "prod"
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/pismo?autoreconnect=true
+    username: user
+    password: pass
+    testOnBorrow: true
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1
+    max-active: 15
+    max-idle: 10
+    max-wait: 8000
+  jpa:
+    generate-ddl: false
+    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate.ddl-auto: validate
 
