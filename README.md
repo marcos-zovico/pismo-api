@@ -1,7 +1,6 @@
 # Pismo API
 
-O projeot foi construido utilizando [Spring Boot](https://spring.io/projects/spring-boot) que facilita o desenvolvimeto, \
-com banco de dados [mysql](https://www.mysql.com/), também foi utilizado [flywaydb](https://flywaydb.org/) para o gerenciamento de migração da banco.
+O projeot foi construido utilizando [Spring Boot](https://spring.io/projects/spring-boot) que facilita o desenvolvimeto, com banco de dados [mysql](https://www.mysql.com/) e [flywaydb](https://flywaydb.org/) para o gerenciamento de migração da banco.
 
 Para iniciar a aplicação execute `make run` dois containers devem subir.
 ```shell script
@@ -20,13 +19,6 @@ Foi gerado uma imagem docker da aplicaçao que esta disponível em: [pismo-api](
 - [docker-compose](https://docs.docker.com/compose/install/) 
 - [Java11+](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 - [Make](https://tldp.org/HOWTO/Software-Building-HOWTO-3.html) 
-
-#
-### Principais Tecnologias
-- [spring-boot](https://spring.io/projects/spring-boot)
-- [Spring Data JPA](https://spring.io/projects/spring-data-jpa) 
-- [flywaydb](https://flywaydb.org/)
-
 
 #
 ### Execução de scripts com MakeFile
