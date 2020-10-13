@@ -1,18 +1,4 @@
 spring:
-  profiles: dev
-  jpa:
-    properties:
-      hibernate:
-        show_sql: true
-        format_sql: true
-    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
-    hibernate.ddl-auto: update
-  flyway:
-    enabled: false
-
-
----
-spring:
   profiles:
     active: "prod"
   datasource:
