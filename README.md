@@ -1,6 +1,6 @@
 # Pismo API
 
-O projeot foi construido utilizando [Spring Boot](https://spring.io/projects/spring-boot) que facilita o desenvolvimeto, com banco de dados [mysql](https://www.mysql.com/) e [flywaydb](https://flywaydb.org/) para o gerenciamento de migração da banco.
+O projeto foi construído utilizando [Spring Boot](https://spring.io/projects/spring-boot) que facilita o desenvolvimeto, com banco de dados [mysql](https://www.mysql.com/) e [flywaydb](https://flywaydb.org/) para o gerenciamento de migração do banco.
 
 Para iniciar a aplicação execute `make run` dois containers devem subir.
 ```shell script
@@ -12,7 +12,7 @@ CONTAINER ID        IMAGE                      COMMAND                  CREATED 
 
 Se os dois containers não subirem, execute o comando `make run` novamente.
  
-Foi gerado uma imagem docker da aplicaçao que esta disponível em: [pismo-api](https://hub.docker.com/r/mzovico/pismo-api)
+Foi gerado uma imagem docker da aplicaçao que está disponível em: [pismo-api](https://hub.docker.com/r/mzovico/pismo-api)
 
 ### Pre requisitos
 - [docker](https://docs.docker.com/get-docker/)
@@ -42,12 +42,12 @@ Parando a aplicação
 make stop
 ```
 
-Gerando a imagem docker, é nessário informar o parametro `${DOCKER_HUB_USER}`
+Gerando a imagem docker, é necessário informar o parâmetro `${DOCKER_HUB_USER}`
 ``` shell script
 make docker-build DOCKER_HUB_USER=mzovico
 ```
 
-Publicando a imagem docker, é nessário informar o parametro `${DOCKER_HUB_USER}` e `${DOCKER_HUB_PASS}`
+Publicando a imagem docker, é necessário informar o parâmetro `${DOCKER_HUB_USER}` e `${DOCKER_HUB_PASS}`
 ``` shell script
 make docker-push DOCKER_HUB_USER=mzovico DOCKER_HUB_PASS=********
 ```
@@ -60,15 +60,15 @@ Acessando o container do mysql
 docker exec -it appsDB /bin/bash
 ```
 
-Acessando mysql cli, ao ser solicitado a senha utiliza a senha `pass`
+Acessando `mysql cli`, ao ser solicitado a senha utilize: `pass`
 ```shell script
 mysql -u user -p pismo 
 ```
 
 #
-### Exemplos de utlização da API
+### Exemplos de utilização da API
 
-#### Criando e consutando contas
+#### Criando e consultando contas
 Na criação da conta é retornado o id.
  
 ```shell scrip
@@ -79,7 +79,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"document_number": "123456
 curl -X GET  http://localhost:8080/accounts/2
 ```
 
-Tanto na criação como na consulta deve retornar
+Tanto na criação como na consulta deve retornar.
 ```json
 {
   "account_id": 2,
@@ -104,7 +104,7 @@ http://localhost:8080/transactions
 
 ```
 
-Na criação da transação deve retornar
+Na criação da transação deve retornar.
 ```json
 {
   "transaction_id": 1,
@@ -120,7 +120,7 @@ para a criação de uma nova transação. Este campo é utilizado para o control
 não sendo possível cria duas transações com o mesmo `transaction_code`.
 
 No caso de timeout na requisição, deve-se refazer a chamado utilizando o mesmo `transaction_code`, \
-caso a transação tenha sido criado pelo servidor, vai ser ignorado a criaçção da transação.
+caso a transação tenha sido criado pelo servidor, vai ser ignorado a criação da transação.
 
 ``` shell script
 pismo-api    | 2020-10-12 22:54:28.945  INFO 1 --- [nio-8080-exec-4] i.p.p.c.account.AccountController        : creating account
