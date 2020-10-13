@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @PismoApplicationTest
-public class TransactionRepositoryTest {
+class TransactionRepositoryTest {
 
     @Autowired
     private AccountRepository accountRepository;
@@ -47,7 +47,7 @@ public class TransactionRepositoryTest {
 
     @Test
     @DisplayName("Save Transaction")
-    public void saveTransaction() {
+    void saveTransaction() {
 
         Transaction transaction = createTransaction(account, operationType, new BigDecimal("125.40"));
         transactionRepository.save(transaction);
@@ -62,7 +62,7 @@ public class TransactionRepositoryTest {
 
     @Test
     @DisplayName("List Transactions by account")
-    public void findByAccount() {
+    void findByAccount() {
 
         Account anotherAccount = createAccount(UUID.randomUUID().toString());
         accountRepository.save(anotherAccount);

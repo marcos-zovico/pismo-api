@@ -1,7 +1,10 @@
 package io.pismo.pismoapi.controller;
 
 public class ApiMapping {
-    
+
+    private ApiMapping() {
+    }
+
     public static final String ACCOUNT_PATH = "/accounts";
     public static final String ACCOUNT_ID_PATH = "/accounts/{accountId}";
 

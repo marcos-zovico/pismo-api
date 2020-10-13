@@ -1,6 +1,5 @@
 package io.pismo.pismoapi.controller.transaction;
 
-import io.pismo.pismoapi.controller.account.AccountResponse;
 import io.pismo.pismoapi.domain.Account;
 import io.pismo.pismoapi.domain.OperationType;
 import io.pismo.pismoapi.domain.Transaction;

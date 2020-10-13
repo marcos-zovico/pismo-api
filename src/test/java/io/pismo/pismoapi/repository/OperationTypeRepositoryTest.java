@@ -13,14 +13,14 @@ import static io.pismo.pismoapi.TestUtil.createOperationType;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @PismoApplicationTest
-public class OperationTypeRepositoryTest {
+class OperationTypeRepositoryTest {
 
     @Autowired
     private OperationTypeRepository repository;
 
     @Test
     @DisplayName("Save All Operation Type")
-    public void saveOperationType() {
+   void saveOperationType() {
 
         repository.save(createOperationType("COMPRA A VISTA"));
         repository.save(createOperationType("COMPRA PARCELADA"));
