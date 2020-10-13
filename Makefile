@@ -20,8 +20,7 @@ stop:
 
 docker-build:
 	echo " --- BUILDING IMAGE --- "
-	rm -R ./build/dependency
-	mkdir build/dependency
+	mkdir -p build/dependency
 	(cd build/dependency; jar -xf ../libs/*.jar)
 	docker build -t ${DOCKER_IMAGE_NAME} .
 	echo " --- TAGGING IMAGE --- "
